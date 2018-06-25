@@ -3,6 +3,7 @@ require 'json'
 
 class Fellowship
   attr_reader :groups
+
   def initialize(dataset = JSON.parse(File.read("data/fellows_dataset.json")))
     group_fellowships(dataset)
     count_average_age
@@ -21,10 +22,10 @@ class Fellowship
   end
 
   def count_average_age
-    @groups.keys.each do |fellowship|
+    groups.keys.each do |fellowship|
       ages = groups[fellowship][:fellows].collect{|fellow| fellow.age}
 
-      @groups[fellowship][:average_age] = ages.sum / ages.length
+      groups[fellowship][:average_age] = ages.sum / ages.length
     end
   end
 
