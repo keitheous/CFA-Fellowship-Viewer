@@ -1,5 +1,4 @@
 require_relative 'fellow'
-require 'pry'
 require 'json'
 
 class JsonParser
@@ -23,7 +22,5 @@ class JsonParser
         :registered => data['registered']
       )
     end
-
-    self
   end
 end
