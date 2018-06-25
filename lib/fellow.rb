@@ -1,5 +1,3 @@
-# require 'pry'
-
 class Fellow
   attr_reader :id, :active, :age, :fellowship, :first_name, :last_name, :email,
     :about, :registered
