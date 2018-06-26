@@ -22,5 +22,7 @@ class JsonParser
         :registered => data['registered']
       )
     end
+
+    self
   end
 end

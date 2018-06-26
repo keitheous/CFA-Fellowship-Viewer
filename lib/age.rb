@@ -2,8 +2,8 @@ class Age
   attr_reader :min, :max
 
   def initialize(ages)
-    @min = ages.max
-    @max = ages.min
+    @min = ages.min
+    @max = ages.max
   end
 
   def calculate_average_per_group(group)
