@@ -1,6 +1,8 @@
 require_relative 'json_parser'
 require_relative 'age'
+require_relative 'fellow'
 require 'json'
+require 'pry'
 
 class Fellowship
   attr_reader :groups, :dataset, :age
@@ -20,6 +22,14 @@ class Fellowship
     self
   end
 
+  def add_fellow(fellow_args = {}, fellow_class = Fellow)
+    return require_fellow_details if fellow_args.empty?
+
+    new_fellow = fellow_class.new(fellow_args)
+
+    create_new_profile(new_fellow)
+  end
+
   def max_age
     age.max
   end
@@ -29,6 +39,20 @@ class Fellowship
   end
 
   private
+
+  def create_new_profile(fellow)
+    age.add_new(fellow.age)
+
+    dataset << fellow
+
+    distribute_fellow(fellow)
+
+    set_average_ages
+  end
+
+  def require_fellow_details
+    puts "Details are required to register new Fellow."
+  end
 
   def distribute_fellow(fellow)
     if existing_fellowship?(fellow.fellowship)
