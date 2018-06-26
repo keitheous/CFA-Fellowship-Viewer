@@ -1,0 +1,28 @@
+[
+  {
+    "id": "x1x1",
+    "isActive": false,
+    "age": 12,
+    "fellowship": "ZESE",
+    "name": {
+      "first": "Edward",
+      "last": "Knifehand"
+    },
+    "email": "moreno.lyons@zese.net",
+    "about": "Ola et labora.",
+    "registered": "Monday, June 4, 2018 6:52 PM"
+  },
+  {
+    "id": "y1y1",
+    "isActive": true,
+    "age": 99,
+    "fellowship": "Brady bunch",
+    "name": {
+      "first": "Richie",
+      "last": "Rich"
+    },
+    "email": "rich.fleming@vicways.org",
+    "about": "Mi amore!",
+    "registered": "Monday, June 4, 2018 10:37 AM"
+  }
+]

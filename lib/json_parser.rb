@@ -9,7 +9,7 @@ class JsonParser
   end
 
   def load_fellows(fellow_object = Fellow)
-    dataset.map do |data|
+    dataset.map! do |data|
       fellow_object.new(
         :id         => data['id'],
         :active     => data['isActive'],
