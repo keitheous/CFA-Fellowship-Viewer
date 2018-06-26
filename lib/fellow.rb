@@ -14,6 +14,10 @@ class Fellow
     @registered = args[:registered]
   end
 
+  def full_name
+    first_name + ' ' + last_name
+  end
+
   def to_s
     puts [
       "Name       : #{first_name} #{last_name}",
