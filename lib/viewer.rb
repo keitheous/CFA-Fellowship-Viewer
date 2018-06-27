@@ -8,7 +8,7 @@ class Viewer
     @groups = groups
   end
 
-  def run
+  def display_fellowships
     print_header
     print_rows
   end
