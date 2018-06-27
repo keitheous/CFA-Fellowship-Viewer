@@ -97,13 +97,13 @@ class CLI
 
   def add_fellow
     puts "Adding new fellow. Please fill up the details below."
-    puts "Enter fellow first and last name seperated by a comma (eg: Jane,Doe)"
+    puts "Enter fellow first and last name seperated by a comma (example: Jane,Doe)"
     first_name, last_name = gets.chomp.split(',')
     puts "Add fellow to which Fellowship?"
     fellowship = gets.chomp
-    puts "What is fellow's email?"
+    puts "What is fellow's email? (example: something@something.co)"
     email = gets.chomp
-    puts "What is fellow's age?"
+    puts "What is fellow's age? (example: 12)"
     age = gets.chomp
     puts "Share a short description."
     about = gets.chomp
