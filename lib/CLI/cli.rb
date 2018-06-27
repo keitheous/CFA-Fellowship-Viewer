@@ -1,4 +1,4 @@
-require_relative 'fellowship'
+require_relative './../fellowship'
 require_relative 'viewer'
 require 'securerandom'
 require 'date'
@@ -85,7 +85,7 @@ class CLI
   def search_fellow
     puts "Searching Fellow. Please enter ID or email"
     input = gets.chomp
-    search_result = search_fellow_by('id', input) | search_fellow_by('email', input) #using divergent instead of || -> readme
+    search_result = search_fellow_by('id', input) | search_fellow_by('email', input)
 
     return unregistered_fellow if search_result.empty?
     print_fellows(search_result)
@@ -130,7 +130,7 @@ class CLI
   end
 
   def unregistered_fellow
-    "Fellow not found.."
+    puts "Fellow not found.."
   end
 
   def invalid_option

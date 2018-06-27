@@ -1,4 +1,4 @@
-require_relative 'fellowship'
+require_relative '../fellowship'
 
 class Viewer
   SPACES = [14, 7, 25, 3].freeze

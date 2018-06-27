@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'pry'
 
 RSpec.describe Age do
   let(:ages)        { [12, 10, 32, 44, 100] }

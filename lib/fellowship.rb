@@ -2,7 +2,6 @@ require_relative 'json_parser'
 require_relative 'age'
 require_relative 'fellow'
 require 'json'
-require 'pry'
 
 class Fellowship
   attr_reader :groups, :dataset, :age
