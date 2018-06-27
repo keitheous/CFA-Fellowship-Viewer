@@ -59,7 +59,7 @@ class CLI
     puts [
       "============================================",
       "Code for Australia: Fellows",
-      "Press (q) to Exit",
+      "Press (q) to Return to Previous Menu",
       "Press (y) to view Youngest fellow",
       "Press (e) to view Eldest fellow",
       "Press (a) to add New Fellow",

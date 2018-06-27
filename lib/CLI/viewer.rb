@@ -1,7 +1,7 @@
 require_relative '../fellowship'
 
 class Viewer
-  SPACES = [14, 7, 25, 3].freeze
+  SPACES = [10, 7, 23, 3, 24].freeze
   attr_reader :groups
 
   def initialize(groups = Fellowship.new.sort_groups.groups)
@@ -16,7 +16,7 @@ class Viewer
   private
 
   def horizontal_line
-    puts "+==============+=======+=========================+===+"
+    puts "+==========+=======+=======================+===+========================+"
   end
 
   def print_header
@@ -31,6 +31,8 @@ class Viewer
     row << word_wrapper('Avg Age', SPACES[1])
     row << word_wrapper('Fellow Name', SPACES[2])
     row << word_wrapper('Age', SPACES[3])
+    row << word_wrapper('ID', SPACES[4])
+
     print_row(row)
   end
 
@@ -51,6 +53,7 @@ class Viewer
       row << word_wrapper(first_row_label(average_age, index), SPACES[1])
       row << word_wrapper(fellow.full_name, SPACES[2])
       row << word_wrapper(fellow.age, SPACES[3])
+      row << word_wrapper(fellow.id, SPACES[4])
 
       print_row(row)
     end
