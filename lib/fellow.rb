@@ -26,8 +26,7 @@ class Fellow
       "Age        : #{age}",
       "Email      : #{email}",
       "Registered : #{registered}",
-      "About      :",
-      "#{about}"
+      "About      :\n#{about}"
     ].unshift("").join("\n")
   end
 end

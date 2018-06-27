@@ -1,5 +1,7 @@
 require_relative 'fellowship'
 require_relative 'viewer'
+require 'securerandom'
+require 'date'
 
 class CLI
   attr_reader :fellowship, :viewer
@@ -58,10 +60,10 @@ class CLI
       "============================================",
       "Code for Australia: Fellows",
       "Press (q) to Exit",
-      "Press (y) to View Youngest fellow",
-      "Press (e) to View Eldest fellow",
-      "Press (a) to Add new fellow",
-      "Press (s) to Search fellow by ID or email",
+      "Press (y) to view Youngest fellow",
+      "Press (e) to view Eldest fellow",
+      "Press (a) to add New Fellow",
+      "Press (s) to search fellow by ID or email",
       "============================================"
     ].unshift("").join("\n")
   end
@@ -94,7 +96,37 @@ class CLI
   end
 
   def add_fellow
-    puts "Adding Fellow"
+    puts "Adding new fellow. Please fill up the details below."
+    puts "Enter fellow first and last name seperated by a comma (eg: Jane,Doe)"
+    first_name, last_name = gets.chomp.split(',')
+    puts "Add fellow to which Fellowship?"
+    fellowship = gets.chomp
+    puts "What is fellow's email?"
+    email = gets.chomp
+    puts "What is fellow's age?"
+    age = gets.chomp
+    puts "Share a short description."
+    about = gets.chomp
+
+    register_fellow(
+      :first_name => first_name,
+      :last_name  => last_name,
+      :fellowship => fellowship,
+      :email      => email,
+      :age        => age.to_i,
+      :about      => about
+    )
+  end
+
+
+  def register_fellow(fellows_details)
+    fellows_details.merge!(
+      :active     => true,
+      :id         => SecureRandom.hex(12),
+      :registered => DateTime.now.strftime("%A, %B %d, %Y %I:%M %p")
+    )
+
+    fellowship.add_fellow(fellows_details)
   end
 
   def unregistered_fellow
@@ -113,5 +145,3 @@ class CLI
     puts "Returning to Fellowships Menu.."
   end
 end
-
-CLI.new.run
