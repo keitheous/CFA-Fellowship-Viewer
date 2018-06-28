@@ -180,7 +180,7 @@ dataset.select{|fellow| fellow.send('email') == 'qwe@qwe.co'}
 dataset.select{|fellow| fellow.send('id') == '456qw9eqwndoiuoqwk'}
 ```
 
-Referring to the fourth line below and knowing that an array was to be expected, I have decided to use [Divergence](http://www.chrisrolle.com/en/blog/array-coherences) to identify if the search is successful or not.
+Referring to the fourth line below and knowing that an array was to be expected, I have decided to use [unique total set](http://www.chrisrolle.com/en/blog/array-coherences) to identify if the search is successful or not.
 ```
 def search_fellow
   puts "Searching Fellow. Please enter ID or email"
@@ -193,12 +193,12 @@ end
 ```
 An unsuccessful search would return an empty array.
 
-> Here are some interesting facts!
-> nil ||  [] => []      <-- OR Operator
-> []  || nil => []      <-- OR Operator
-> []  || [1] => []      <-- OR Operator
-> [1] |  [2] => [1, 2]  <-- Divergence
-> []  |  [2] => [2]     <-- Divergence
+Here are some interesting facts!
+* `nil ||  [] => []      <-- OR Operator`
+* `[]  || nil => []      <-- OR Operator`
+* `[]  || [1] => []      <-- OR Operator`
+* `[1] |  [2] => [1, 2]  <-- Unique total set`
+* `[]  |  [2] => [2]     <-- Unique total set`
 
 ## Future Improvements
 1. If I had more time, I would write better tests and have better names for my classes and methods.
